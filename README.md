@@ -9,7 +9,8 @@ graph TD
     C1 --> D{extract_TUs.py} 
     C2(BED file) --> D{extract_TUs.py}
     D{extract_TUs.py} -->  E(TU result folder)
-    E --> |find_longest_TU_per_gene.py| F(find_longest_TU.csv)
+    E --> |TU_coverage_list.csv|E1{find_longest_TU_per_gene.py}
+    E1 --> F(find_longest_TU.csv)
     C2 --> G
     C1 --> |coverage file|G
     F --> G{find_TSS_TTS.py}
